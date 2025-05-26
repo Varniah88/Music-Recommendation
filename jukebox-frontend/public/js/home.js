@@ -11,7 +11,7 @@ async function fetchTopSongs() {
         return data.map(song => ({
             title: song.name,
             artist: song.artists.map(a => a.name).join(', '),
-            img: song.album?.images?.[0]?.url || '../public/images/default-song.png'
+            img: song.album?.images?.[0]?.url || '/images/default-song.png'
         }));
     } catch (error) {
         console.error('Error fetching top songs:', error);
@@ -35,7 +35,7 @@ async function fetchTopArtists() {
         return artistsWithImages.map(artist => ({
             name: artist.name,
             label: 'Artist',
-            img: artist.image || '../public/images/default-artist.png',
+            img: artist.image || '/images/default-artist.png',
         }));
 
     } catch (error) {

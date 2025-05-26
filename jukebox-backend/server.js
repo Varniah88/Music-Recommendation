@@ -74,7 +74,12 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 require('./socket/chat')(io);
 
 // Serve frontend assets
-app.use(express.static(path.join(__dirname, '../jukebox-frontend')));
+app.use(express.static(path.join(__dirname, '../../jukebox-frontend')));
+app.use(express.static(path.join(__dirname, '../jukebox-frontend/public')));
+// Serve controllers for frontend JavaScript
+app.use('/controllers', express.static(path.join(__dirname, '../jukebox-frontend/controllers')));
+app.use('/upload', express.static(path.join(__dirname, 'upload')));
+
 
 // Start server
 const PORT = process.env.PORT || 3000;
@@ -96,7 +101,26 @@ const PORT = process.env.PORT || 3000;
 //     console.log(`Server running at http://localhost:${PORT}`);
 //   });
 // }
-
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+app.get('/check-frontend', (req, res) => {
+  const fs = require('fs');
+  const frontendPath = path.join(__dirname, '../jukebox-frontend/views/landing.html');
+  fs.access(frontendPath, fs.constants.F_OK, (err) => {
+    if (err) {
+      res.status(404).send('Frontend file NOT found at ' + frontendPath);
+    } else {
+      res.send('Frontend file EXISTS at ' + frontendPath);
+    }
+  });
 });
+
+app.get('/api/student', (req, res) => {
+  res.json({
+    name: "Varniah Kangeswaran",
+    studentId: "225024153"
+  });
+});
+
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running at http://0.0.0.0:${PORT}`);
+});
+

@@ -1,19 +1,3 @@
-// public/js/home.js
-
-// const playlist = [
-//   { title: 'Old Phone', img: '../public/images/play 6.png' },
-//   { title: 'Show Me Love', img: '../public/images/song 4.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/song 1.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/song 1.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/song 1.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/play 6.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/song 1.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/song 1.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/song 1.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/song 1.png' },
-//   { title: 'Egypt - Remix', img: '../public/images/play 6.png' }
-// ];
-
 let playlist = [];
 let playlistSongs = [];
 let allPlaylists = [];
@@ -111,52 +95,6 @@ document.getElementById('modal-close-btn').addEventListener('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', fetchPlaylists);
-
-// const playlistSongs = [
-//   {
-//     title: 'Adiye – From “Bachelor”',
-//     artist: 'Dhibu Ninan Thomas',
-//     album: 'Adiye (From “Bachelor”)',
-//     duration: '4:32',
-//     image: '../public/images/play 6.png'
-//   },
-//   {
-//     title: 'Adiye – From “Bachelor”',
-//     artist: 'Dhibu Ninan Thomas',
-//     album: 'Adiye (From “Bachelor”)',
-//     duration: '4:32',
-//     image: '../public/images/song 1.png'
-//   },
-//   {
-//     title: 'Adiye – From “Bachelor”',
-//     artist: 'Dhibu Ninan Thomas',
-//     album: 'Adiye (From “Bachelor”)',
-//     duration: '4:32',
-//     image: '../public/images/song 1.png'
-//   },
-//   {
-//     title: 'Adiye – From “Bachelor”',
-//     artist: 'Dhibu Ninan Thomas',
-//     album: 'Adiye (From “Bachelor”)',
-//     duration: '4:32',
-//     image: '../public/images/song 1.png'
-//   },
-//   {
-//     title: 'Adiye – From “Bachelor”',
-//     artist: 'Dhibu Ninan Thomas',
-//     album: 'Adiye (From “Bachelor”)',
-//     duration: '4:32',
-//     image: '../public/images/song 1.png'
-//   },
-//   {
-//     title: 'Adiye – From “Bachelor”',
-//     artist: 'Dhibu Ninan Thomas',
-//     album: 'Adiye (From “Bachelor”)',
-//     duration: '4:32',
-//     image: '../public/images/song 1.png'
-//   },
-//   // Add more songs as needed...
-// ];
 
 function renderPlaylistSongs() {
   const tbody = document.getElementById('playlist-songs-body');

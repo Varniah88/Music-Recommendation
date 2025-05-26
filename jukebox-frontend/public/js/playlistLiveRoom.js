@@ -1,5 +1,6 @@
 console.log("🎬 playlistLiveRoom.js is running");
-const socket = io("http://localhost:3000"); // Connect to backend server
+const socket = io("http://100.88.93.60:3000");
+// Connect to backend server
 
 socket.on("connect", () => {
   console.log("🔌 Connected to Socket.IO server:", socket.id);

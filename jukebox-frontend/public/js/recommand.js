@@ -1,25 +1,4 @@
 const songs = [
-  // {
-  //   title: "Adiye – From “Bachelor”",
-  //   artist: "Dhibu Ninan Thomas",
-  //   album: "Adiye (From “Bachelor”)",
-  //   duration: "4:32",
-  //   image: "../public/images/song 1.png"
-  // },
-  // {
-  //   title: "Vaarayo Vaarayo – Lofi Flip",
-  //   artist: "Narendar Sankar",
-  //   album: "Vaarayo Vaarayo (Lofi Flip)",
-  //   duration: "2:29",
-  //   image: "../public/images/song 4.png"
-  // },
-  // {
-  //   title: "Thozhi (From “Hey Sinamika”)",
-  //   artist: "Kovindh Vasanth",
-  //   album: "Thozhi (From “Hey Sinamika”)",
-  //   duration: "5:57",
-  //   image: "../public/images/song 4.png"
-  // }
 ];
 
 let searchResults = [];
@@ -37,7 +16,7 @@ function appendSong(song) {
   const title = song.name || 'Unknown';
   const artistNames = song.artists ? song.artists.map(a => a.name).join(', ') : 'Unknown Artist';
   const albumName = song.album?.name || 'Unknown Album';
-  const imageUrl = song.album?.images?.[0]?.url || '../public/images/song 1.png';
+  const imageUrl = song.album?.images?.[0]?.url || '/images/song 1.png';
   const duration = song.duration || '0:00';
   const trackId = song.track_id || 'Unknown ID';
   // Calculate current row number + 1
@@ -98,7 +77,7 @@ function openPlaylistModal() {
     const album = row.querySelector('.song-album')?.textContent.trim();
     const duration = row.querySelector('.song-duration')?.textContent.trim();
     const track_id = row.querySelector('.track-id')?.textContent.trim();
-    const image = row.querySelector('img')?.src || '../public/images/song 1.png';
+    const image = row.querySelector('img')?.src || '/images/song 1.png';
 
     songs.push({ track_id, title, artist, album, duration, image });
   });
@@ -146,7 +125,7 @@ function openPlaylistModal() {
           artist: song.artist,
           album: song.album,
           duration: song.duration || '3:30',
-          image: song.image || '../public/images/song 1.png'
+          image: song.image || '/images/song 1.png'
         });
       });
       console.log(JSON.stringify(songDetails, null, 2));
@@ -168,49 +147,6 @@ function closePlaylistModal() {
 
 // Dummy playlist songs (you'll pull from real data later)
 const playlistSongs = [
-  // {
-  //   title: 'Adiye – From “Bachelor”',
-  //   artist: 'Dhibu Ninan Thomas',
-  //   album: 'Adiye (From “Bachelor”)',
-  //   duration: '4:32',
-  //   image: '../public/images/play 6.png'
-  // },
-  // {
-  //   title: 'Adiye – From “Bachelor”',
-  //   artist: 'Dhibu Ninan Thomas',
-  //   album: 'Adiye (From “Bachelor”)',
-  //   duration: '4:32',
-  //   image: '../public/images/song 1.png'
-  // },
-  // {
-  //   title: 'Adiye – From “Bachelor”',
-  //   artist: 'Dhibu Ninan Thomas',
-  //   album: 'Adiye (From “Bachelor”)',
-  //   duration: '4:32',
-  //   image: '../public/images/song 1.png'
-  // },
-  // {
-  //   title: 'Adiye – From “Bachelor”',
-  //   artist: 'Dhibu Ninan Thomas',
-  //   album: 'Adiye (From “Bachelor”)',
-  //   duration: '4:32',
-  //   image: '../public/images/song 1.png'
-  // },
-  // {
-  //   title: 'Adiye – From “Bachelor”',
-  //   artist: 'Dhibu Ninan Thomas',
-  //   album: 'Adiye (From “Bachelor”)',
-  //   duration: '4:32',
-  //   image: '../public/images/song 1.png'
-  // },
-  // {
-  //   title: 'Adiye – From “Bachelor”',
-  //   artist: 'Dhibu Ninan Thomas',
-  //   album: 'Adiye (From “Bachelor”)',
-  //   duration: '4:32',
-  //   image: '../public/images/song 1.png'
-  // },
-  // Add more songs as needed...
 ];
 
 const modal = document.getElementById('playlist-modal');
@@ -291,7 +227,7 @@ $(document).ready(() => {
         console.log('Response:', data);
         data.forEach(song => {
           const artistNames = song.artists.map(artist => artist.name).join(', ');
-          const imageUrl = song.album?.images?.[0]?.url || '../public/images/song 1.png';
+          const imageUrl = song.album?.images?.[0]?.url || '/images/song 1.png';
           const item = `
           <li class="collection-item suggestion-item" data-title="${song.name}" style="display: flex; align-items: center; gap: 8px;">
             <img src="${imageUrl}" alt="album cover" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
