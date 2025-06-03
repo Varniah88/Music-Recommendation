@@ -4,6 +4,8 @@ FROM node:18
 # Set working directory inside container for backend
 WORKDIR /app/jukebox-backend
 
+COPY ./jukebox-backend/.env /app/jukebox-backend/.env
+
 # Copy backend package files and install dependencies
 COPY jukebox-backend/package*.json ./
 RUN npm install
